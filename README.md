@@ -8,9 +8,13 @@ Include this repository in your project to give your coding agent access to the 
 
 ## Last Updated
 
-*2026-01-14*
+**2026-01-14**
 
 This repository is an exact copy of the official documentation as of the date above.
+
+## Repository
+
+[github.com/xiqi/openai-api-markdown](https://github.com/xiqi/openai-api-markdown)
 
 ## Contents
 - API Reference
