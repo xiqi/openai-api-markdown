@@ -1,0 +1,40 @@
+# Delete checkpoint permission
+
+Source: https://platform.openai.com/docs/api-reference/fine-tuning/delete-permission
+
+`DELETE /v1/fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions/{permission_id}`
+
+**NOTE:** This endpoint requires an [admin API key](../admin-api-keys).
+
+Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
+
+## Parameters
+- `fine_tuned_model_checkpoint` (path, string, required): The ID of the fine-tuned model checkpoint to delete a permission for.
+- `permission_id` (path, string, required): The ID of the fine-tuned model checkpoint permission to delete.
+
+## Responses
+### 200
+OK
+#### application/json
+- `id` (string, required): The ID of the fine-tuned model checkpoint permission that was deleted.
+- `object` (string, required): The object type, which is always "checkpoint.permission". Enum: 'checkpoint.permission'.
+- `deleted` (boolean, required): Whether the fine-tuned model checkpoint permission was successfully deleted.
+
+## Returns
+The deletion status of the fine-tuned model checkpoint [permission object](permission-object.md).
+
+## Examples
+### Example
+#### Request (curl)
+```bash
+curl https://api.openai.com/v1/fine_tuning/checkpoints/ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd/permissions/cp_zc4Q7MP6XxulcVzj4MZdwsAB \
+  -H "Authorization: Bearer $OPENAI_API_KEY"
+```
+#### Response
+```json
+{
+  "object": "checkpoint.permission",
+  "id": "cp_zc4Q7MP6XxulcVzj4MZdwsAB",
+  "deleted": true
+}
+```

@@ -1,0 +1,14 @@
+# output_audio_buffer.cleared
+
+Source: https://platform.openai.com/docs/api-reference/realtime-server-events/output_audio_buffer/cleared
+
+**WebRTC/SIP Only:** Emitted when the output audio buffer is cleared. This happens either in VAD
+mode when the user has interrupted (`input_audio_buffer.speech_started`),
+or when the client has emitted the `output_audio_buffer.clear` event to manually
+cut off the current audio response.
+[Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+
+## Properties
+- `event_id` (string, required): The unique ID of the server event.
+- `type` (string, required): The event type, must be `output_audio_buffer.cleared`. Enum: 'output_audio_buffer.cleared'.
+- `response_id` (string, required): The unique ID of the response that produced the audio.
