@@ -6,6 +6,9 @@ Source: https://platform.openai.com/docs/api-reference/certificates/modifyCertif
 
 Modify a certificate. Note that only the name can be modified.
 
+## Parameters
+- `certificate_id` (path, string, required): Unique ID of the certificate to modify.
+
 ## Request body
 ### application/json
 - `name` (string, required): The updated name for the certificate

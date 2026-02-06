@@ -2,9 +2,9 @@
 
 Source: https://platform.openai.com/docs/api-reference/assistants
 
-Build assistants that can call models and use tools to perform tasks.
+The Assistants API is deprecated and will be removed in August 2026. The recommended replacement is the Responses API. [Learn more](https://platform.openai.com/docs/guides/migrate-to-responses).
 
-[Get started with the Assistants API](https://platform.openai.com/docs/assistants)
+Build assistants that can call models and use tools to perform tasks.
 
 ## Contents
 - [Create assistant](createAssistant.md)

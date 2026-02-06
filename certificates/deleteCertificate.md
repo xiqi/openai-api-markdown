@@ -8,6 +8,9 @@ Delete a certificate from the organization.
 
 The certificate must be inactive for the organization and all projects.
 
+## Parameters
+- `certificate_id` (path, string, required): Unique ID of the certificate to delete.
+
 ## Responses
 ### 200
 Certificate deleted successfully.

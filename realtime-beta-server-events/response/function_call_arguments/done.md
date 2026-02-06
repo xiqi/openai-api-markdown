@@ -12,4 +12,5 @@ Also emitted when a Response is interrupted, incomplete, or cancelled.
 - `item_id` (string, required): The ID of the function call item.
 - `output_index` (integer, required): The index of the output item in the response.
 - `call_id` (string, required): The ID of the function call.
+- `name` (string, required): The name of the function that was called.
 - `arguments` (string, required): The final arguments as a JSON string.

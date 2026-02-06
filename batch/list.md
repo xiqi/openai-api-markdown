@@ -1,4 +1,4 @@
-# List batch
+# List batches
 
 Source: https://platform.openai.com/docs/api-reference/batch/list
 

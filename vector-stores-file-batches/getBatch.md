@@ -33,7 +33,7 @@ The [vector store file batch](batch-object.md) object.
 ### Example
 #### Request (curl)
 ```bash
-curl https://api.openai.com/v1/vector_stores/vs_abc123/files_batches/vsfb_abc123 \
+curl https://api.openai.com/v1/vector_stores/vs_abc123/file_batches/vsfb_abc123 \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -H "OpenAI-Beta: assistants=v2"

@@ -8,7 +8,7 @@ Include this repository in your project to give your coding agent access to the 
 
 ## Last Updated
 
-This repository is an exact copy of the official documentation as of ***2026-01-14***.
+This repository is an exact copy of the official documentation as of ***2026-02-06***.
 
 ## Repository
 
@@ -231,7 +231,7 @@ This repository is an exact copy of the official documentation as of ***2026-01-
     - [Create batch](batch/create.md)
     - [Retrieve batch](batch/retrieve.md)
     - [Cancel batch](batch/cancel.md)
-    - [List batch](batch/list.md)
+    - [List batches](batch/list.md)
     - [The batch object](batch/object.md)
     - [The request input object](batch/request-input.md)
     - [The request output object](batch/request-output.md)
@@ -448,7 +448,7 @@ This repository is an exact copy of the official documentation as of ***2026-01-
     - [The run step delta object](assistants-streaming/run-step-delta-object.md)
     - [Assistant stream events](assistants-streaming/events.md)
 - Administration
-  - [Administration](administration.md)
+  - Administration
   - [Admin API Keys](admin-api-keys/index.md)
     - [List all organization and project API keys.](admin-api-keys/list.md)
     - [Create admin API key](admin-api-keys/create.md)
@@ -574,7 +574,7 @@ This repository is an exact copy of the official documentation as of ***2026-01-
   - [Completions](completions/index.md)
     - [Create completion](completions/create.md)
     - [The completion object](completions/object.md)
-  - [Realtime Beta](realtime_beta.md)
+  - Realtime Beta
   - [Realtime Beta session tokens](realtime-beta-sessions/index.md)
     - [Create session](realtime-beta-sessions/create.md)
     - [Create transcription session](realtime-beta-sessions/create-transcription.md)

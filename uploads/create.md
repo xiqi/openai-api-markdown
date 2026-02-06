@@ -27,11 +27,14 @@ File](../files/create.md).
 - `filename` (string, required): The name of the file to upload.
 - `purpose` (string, required): The intended purpose of the uploaded file.
   
-  See the [documentation on File purposes](../files/create.md#files-create-purpose). Enum: 'assistants', 'batch', 'fine-tune', 'vision'.
+  See the [documentation on File
+  purposes](../files/create.md#files-create-purpose). Enum: 'assistants', 'batch', 'fine-tune', 'vision'.
 - `bytes` (integer, required): The number of bytes in the file you are uploading.
 - `mime_type` (string, required): The MIME type of the file.
   
-  This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
+  
+  This must fall within the supported MIME types for your file purpose. See
+  the supported MIME types for assistants and vision.
 - `expires_after` (object, optional): The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
   - `anchor` (string, required): Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Enum: 'created_at'.
   - `seconds` (integer, required): The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).

@@ -36,7 +36,7 @@ Emitted when an output item is marked done.
     - `type` (string, required): The type of the web search tool call. Always `web_search_call`. Enum: 'web_search_call'.
     - `status` (string, required): The status of the web search tool call. Enum: 'in_progress', 'searching', 'completed', 'failed'.
     - `action` (object, required): An object describing the specific action taken in this web search call.
-      Includes details on how the model used the web (search, open_page, find).
+      Includes details on how the model used the web (search, open_page, find_in_page).
       - Variant (object):
         - `type` (string, required): The action type. Enum: 'search'.
         - `query` (string, required): [DEPRECATED] The search query.
@@ -46,9 +46,9 @@ Emitted when an output item is marked done.
             - ...
       - Variant (object):
         - `type` (string, required): The action type. Enum: 'open_page'.
-        - `url` (string, required): The URL opened by the model.
+        - `url` (string | null, optional): The URL opened by the model.
       - Variant (object):
-        - `type` (string, required): The action type. Enum: 'find'.
+        - `type` (string, required): The action type. Enum: 'find_in_page'.
         - `url` (string, required): The URL of the page searched for the pattern.
         - `pattern` (string, required): The pattern or text to search for within the page.
   - Variant (object):
@@ -66,10 +66,8 @@ Emitted when an output item is marked done.
         - `x` (integer, required): The x-coordinate where the double click occurred.
         - `y` (integer, required): The y-coordinate where the double click occurred.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a drag action, this property is 
-          always set to `drag`. Enum: 'drag'. Default: `drag`.
-        - `path` (array<object>, required): An array of coordinates representing the path of the drag action. Coordinates will appear as an array
-          of objects, eg
+        - `type` (string, required): Specifies the event type. For a drag action, this property is always set to `drag`. Enum: 'drag'. Default: `drag`.
+        - `path` (array<object>, required): An array of coordinates representing the path of the drag action. Coordinates will appear as an array of objects, eg
           ```
           [
             { x: 100, y: 200 },
@@ -82,27 +80,22 @@ Emitted when an output item is marked done.
         - `type` (string, required): Specifies the event type. For a keypress action, this property is always set to `keypress`. Enum: 'keypress'. Default: `keypress`.
         - `keys` (array<string>, required): The combination of keys the model is requesting to be pressed. This is an array of strings, each representing a key.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a move action, this property is 
-          always set to `move`. Enum: 'move'. Default: `move`.
+        - `type` (string, required): Specifies the event type. For a move action, this property is always set to `move`. Enum: 'move'. Default: `move`.
         - `x` (integer, required): The x-coordinate to move to.
         - `y` (integer, required): The y-coordinate to move to.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a screenshot action, this property is 
-          always set to `screenshot`. Enum: 'screenshot'. Default: `screenshot`.
+        - `type` (string, required): Specifies the event type. For a screenshot action, this property is always set to `screenshot`. Enum: 'screenshot'. Default: `screenshot`.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a scroll action, this property is 
-          always set to `scroll`. Enum: 'scroll'. Default: `scroll`.
+        - `type` (string, required): Specifies the event type. For a scroll action, this property is always set to `scroll`. Enum: 'scroll'. Default: `scroll`.
         - `x` (integer, required): The x-coordinate where the scroll occurred.
         - `y` (integer, required): The y-coordinate where the scroll occurred.
         - `scroll_x` (integer, required): The horizontal scroll distance.
         - `scroll_y` (integer, required): The vertical scroll distance.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a type action, this property is 
-          always set to `type`. Enum: 'type'. Default: `type`.
+        - `type` (string, required): Specifies the event type. For a type action, this property is always set to `type`. Enum: 'type'. Default: `type`.
         - `text` (string, required): The text to type.
       - Variant (object):
-        - `type` (string, required): Specifies the event type. For a wait action, this property is 
-          always set to `wait`. Enum: 'wait'. Default: `wait`.
+        - `type` (string, required): Specifies the event type. For a wait action, this property is always set to `wait`. Enum: 'wait'. Default: `wait`.
     - `pending_safety_checks` (array<object>, required): The pending safety checks for the computer call.
       - Items:
         - `id` (string, required): The ID of the pending safety check.
@@ -167,6 +160,7 @@ Emitted when an output item is marked done.
     - `type` (string, required): The type of the shell call output. Always `shell_call_output`. Enum: 'shell_call_output'. Default: `shell_call_output`.
     - `id` (string, required): The unique ID of the shell call output. Populated when this item is returned via API.
     - `call_id` (string, required): The unique ID of the shell tool call generated by the model.
+    - `status` (string, required): The status of the shell call output. One of `in_progress`, `completed`, or `incomplete`. Enum: 'in_progress', 'completed', 'incomplete'.
     - `output` (array<object>, required): An array of shell call output contents
       - Items:
         - `stdout` (string, required): The standard output that was captured.

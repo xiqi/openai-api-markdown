@@ -23,5 +23,5 @@ curl https://api.openai.com/v1/models \
   -H "OpenAI-Project: $PROJECT_ID"
 ```
 
-Usage from these API requests counts as usage for the specified organization and project.Organization IDs can be found on your [organization settings](https://platform.openai.com/settings/organization/general) page.
+Usage from these API requests counts as usage for the specified organization and project. Organization IDs can be found on your [organization settings](https://platform.openai.com/settings/organization/general) page.
 Project IDs can be found on your [general settings](https://platform.openai.com/settings) page by selecting the specific project.
